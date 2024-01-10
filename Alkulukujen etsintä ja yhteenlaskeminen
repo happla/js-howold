@@ -1,0 +1,25 @@
+function Alkuluku(luku) {
+	if (luku <= 1) {
+		return false;
+	}
+
+	for (var index = 2; index <= Math.sqrt(luku); index++) {
+		if (luku % index === 0) {
+			return false;
+		}
+	}
+	return true;
+}	
+
+function etsiAlkuluvut(limit) {
+		let lukuCount = 0;
+	for (let index = 1; index <= limit; index++) {
+		if (Alkuluku(index)) {
+			console.log(index);
+			lukuCount++;
+		}
+	}
+		console.log("Alkulukuja löydetty yhteensä: " + lukuCount);
+}
+
+etsiAlkuluvut(60)
