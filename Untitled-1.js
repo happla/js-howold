@@ -22,5 +22,5 @@ const howOld = (age, year) => {
     
     // Once your function is written, write function calls to test your code!
     
-    console.log(howOld(25,1995))
+    console.log(howOld(userinputday, userinputyear)
     
