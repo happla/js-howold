@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        label.checkbox-label {
+            font-size: 20px;
+        }
+
+        input[type="button"] {
+            font-size: 16px;
+        }
+
+        p.on {
+            font-size: 18px;
+            display: block; /* Initially set to 'block' */
+        }
+
+        p.off {
+            font-size: 18px;
+            display: none; /* Initially set to 'none' */
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="checkbox" id="toggleCheckbox" checked onclick="toggleState()">
+    <input type="button" value="Paina Tästä!" onclick="toggleState()"> 
+    <p id="ON" class="on">ON</p>
+    <p id="OFF" class="off">OFF</p>
+   
+    <script>
+        function toggleState() {
+            var onParagraph = document.getElementById("ON");
+            var offParagraph = document.getElementById("OFF");
+
+            if (onParagraph.style.display === "block") {
+                onParagraph.style.display = "none";
+                offParagraph.style.display = "block";
+            } else {
+                onParagraph.style.display = "block";
+                offParagraph.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
