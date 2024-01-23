@@ -1,0 +1,16 @@
+
+function laskeNelio() {
+	var inputElement = document.getElementById("numero");
+	if (inputElement) {
+		var luku = parseInt(inputElement.innerHTML);
+	if (!isNaN(luku)) {
+		var nelio= luku ** 2;
+	}
+		console.log("Luvun " + luku + " neliö on " + nelio);
+	}
+	else {
+		return;
+	}
+	
+}
+laskeNelio();
