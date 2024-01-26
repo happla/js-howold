@@ -1,0 +1,32 @@
+// html
+<body>    
+    <form>
+        <label>Luku:</label>
+        <input type="text" id="luku"><br>
+        <label>Eksponentti:</label>
+        <input type="text" id="eksponentti"><br>
+        <input type="button" id="painike" onclick="laskuFunktio()" value="Laske potenssi">
+    </form>
+</body>
+
+
+// js fetch parameter and return values
+
+function laskuFunktio() {
+	var luku = noudaArvo("luku");
+	var eksp = noudaArvo("eksponentti");
+	
+	console.log("Luku " + luku + " potenssiin " + eksp + " on:");		
+	console.log(laskePotenssi(luku, eksp));
+}
+	
+
+// Put your code here
+function noudaArvo(id) {
+	var element = document.getElementById(id);
+	return parseInt(element.value);
+}
+	function laskePotenssi(luku, eksp) {
+		return Math.pow(luku, eksp);
+	}
+
