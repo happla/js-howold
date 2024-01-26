@@ -1,0 +1,17 @@
+<body>
+    <form>
+        <label>Luku:</label>
+        <input type="text" id="luku">
+        <input type="button" id="painike" onclick="laskeNelio()" value="Laske neliö">
+    </form>
+    <div id="tulos"></div>
+</body>
+
+function laskeNelio() {
+	var inputElement = document.getElementById("luku");
+	var inputValue= parseInt(inputElement.value);
+	var square = inputValue * inputValue;
+
+	var resultElement = document.getElementById("tulos");
+	resultElement.textContent = "Luvun " + inputValue + " neliö on " + square;
+		}
