@@ -1,0 +1,23 @@
+// first one is calling function and second one calling string 
+// e.x kimmo.nimi() & kimmo.etunimi
+var kimmo = 
+{
+	nimi: function (){
+		return "Kimmo Koodari";
+	},
+	etunimi: "Kimmo",
+	ika:20
+};
+var oona = 
+	{
+		nimi: function() {
+			return "Oona Ohjelmoija";
+		},
+		etunimi: "Oona",
+		ika:32
+	};
+
+console.log("Nimi: " + kimmo.nimi() + "\tIkä:" + kimmo.ika);
+console.log("Nimi: " + oona.nimi() + "\tIkä:" + oona.ika);
+
+console.log(oona.etunimi + " on " + (oona.ika - kimmo.ika) + " vuotta vanhempi kuin " + kimmo.etunimi);
