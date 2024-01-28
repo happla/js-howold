@@ -1,0 +1,26 @@
+function toisto(repeatTimes, value, func) {
+    if (repeatTimes < 1) {
+        return "Toistoja tulee olla ainakin yksi!";
+    }
+    let repeatedValue = value;
+    for (let i = 0; i < repeatTimes; i++) {
+        repeatedValue = func(repeatedValue);
+    }
+	return repeatedValue;
+}
+	
+
+function puolitus(value){
+    return value / 2;
+}
+
+function nelio(value){
+    return value * value;
+}
+
+console.log(puolitus(50));
+console.log(toisto(5, 200, puolitus));
+console.log(toisto(3,5, nelio));
+console.log(toisto(-1, 99, puolitus));
+
+// note to self laita oikeat parametrit niin säästät aikaa
