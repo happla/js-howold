@@ -1,0 +1,19 @@
+var array1 = ["eka", "toka"];
+var array2 = ["kolmas", "neljäs"];
+
+function popAndShift() {
+	 var usePop = true;
+	console.log("Taulukko 1: ", array1.join(", ")); // note to self if want to print in original/before state dont put the prints in the loop..
+	console.log("Taulukko 2: ", array2.join(", "));
+// Put your code here
+	while (array2.length > 0) {
+		if (usePop) {
+			array1.push(array2.pop()); // remove last element from array 2 and add it to array1
+		} else {
+			array1.push(array2.shift()); //remove first element from array 2 and add it to array1
+		}
+		usePop= !usePop // toggle flag
+	}
+	console.log("Lopputulos: ", array1.join(", "));
+	return array1; // return modified array1
+}
