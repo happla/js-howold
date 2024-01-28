@@ -1,0 +1,20 @@
+function lisaaLuku() {
+    var lukuEle = document.getElementById("luku").value; // Get the value from the input field
+    var paragraph = document.createElement("p"); // Create a new paragraph element
+    var textNode = document.createTextNode(lukuEle); // Create a text node with the entered value
+    paragraph.appendChild(textNode); // Append the text node to the paragraph element
+    document.body.appendChild(paragraph); // Append the paragraph element to the body
+}
+
+function tulostaTiedot() {
+    var paragraphs = document.querySelectorAll("p"); // Get all paragraph elements in the document
+    var tiedot = paragraphs.length; // Get the count of paragraph elements
+    var total = 0; 
+    paragraphs.forEach(function(paragraph) {
+        total += parseFloat(paragraph.textContent); 
+    });
+    
+    var average = tiedot > 0 ? total / tiedot : 0; // calculate the average
+    console.log("Taulukossa on " + tiedot + " arvoa.");
+    console.log("Lukujen keskiarvo on " + average);
+}
