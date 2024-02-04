@@ -1,0 +1,42 @@
+function Henkilo(etunimi, sukunimi) {
+	this.etunimi = etunimi;
+	this.sukunimi = sukunimi;
+}
+Henkilo.prototype.nimi = function() {return (this.sukunimi + " " + this.etunimi)}
+
+
+// koodia ei muokata tämän yläpuolelta
+class Asiakas extends Henkilo {
+	constructor(etunimi, sukunimi, id=0, kulut = 0) {
+		super(etunimi, sukunimi);
+		this.id= id;
+		this.kulut = kulut;
+	} 
+
+bonus(){
+	if (this.kulut > 5000) {
+		return "kulta";
+		
+	} else if(this.kulut > 1000) {
+		return "hopea";
+	
+	} else {
+		return "perus";
+	}
+}
+}
+//koodia ei muokata tämän alapuolelta
+		
+
+var henkilo = new Henkilo("Kerttu", "Leppä");
+var asiakas1 = new Asiakas("Matti", "Meikäläinen", 1);
+var asiakas2 = new Asiakas("Hanna", "Huippukoodari", 2, 1500);
+var asiakas3 = new Asiakas("Gilbert", "Goldson", 3, 8000);
+
+console.log(henkilo.nimi());
+console.log(asiakas1.nimi());
+console.log(asiakas1.bonus());
+console.log(asiakas2.nimi());
+console.log(asiakas2.bonus());
+console.log(asiakas3.nimi());
+console.log(asiakas3.bonus());
