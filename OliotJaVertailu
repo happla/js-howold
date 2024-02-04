@@ -1,0 +1,48 @@
+var henk1 = {
+    nimi: "Mikko",
+tyo: "JS-Koodari",
+
+    palkka: 5000,
+    vertaaPalkka: function(henkilo) {
+        var erotus = this.palkka - henkilo.palkka;
+        if (erotus > 0) {
+            console.log(this.nimi + " tienaa " + erotus + " enemmän kuin " + henkilo.nimi);
+        } else if (erotus < 0) {
+            console.log(this.nimi + " tienaa " + (-erotus) + " vähemmän kuin " + henkilo.nimi);
+        } else {
+            console.log(this.nimi + " tienaa yhtä paljon kuin " + henkilo.nimi);
+        }
+    }
+};
+
+var henk2 = {
+    nimi: "Lea",
+    tyo: "Python-koodari",
+
+    palkka: 1500
+};
+
+var henk3 = {
+    nimi: "Pena",
+tyo:"Opettaja",
+
+    palkka: 1000,
+    vertaaPalkka: function(henkilo) {
+        var erotus = this.palkka - henkilo.palkka;
+        if (erotus > 0) {
+            console.log(this.nimi + " tienaa " + erotus + " enemmän kuin " + henkilo.nimi);
+        } else if (erotus < 0) {
+            console.log(this.nimi + " tienaa " + (-erotus) + " vähemmän kuin " + henkilo.nimi);
+        } else {
+            console.log(this.nimi + " tienaa yhtä paljon kuin " + henkilo.nimi);
+        }
+    }
+};
+
+console.log("Ensimmäisen henkilön nimi: " + henk1.nimi);
+console.log("Toisen henkilön työ: " + henk2.tyo);
+console.log("Kolmannen henkilön palkka: " + henk3.palkka + "\n")
+
+henk1.vertaaPalkka(henk2);
+henk3.vertaaPalkka(henk2);
+henk3.vertaaPalkka(henk3);
