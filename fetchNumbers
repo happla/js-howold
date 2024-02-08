@@ -1,0 +1,12 @@
+var lause = "J07ku7 k1rj01774v47 54n0j4 num3r0174 käy77ä3n.";
+
+function tulostaNumerot() {
+
+// Put your code here
+	if(!/\d/.test(lause)) {
+		console.log("Ei numeroita!");
+		return;
+	}
+	var numerot= lause.match(/\d+/g);
+	console.log(numerot)
+}
