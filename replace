@@ -1,0 +1,7 @@
+var lause = "Tässä     lauseessa     on     liikaa  välejä.";
+function lauseenKorjaus() {
+
+// Put your code here
+	lause = lause.replace(/\s+/g, ' ');
+	console.log(lause);
+}
