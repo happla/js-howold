@@ -1,0 +1,21 @@
+const viikonPaiva = (function() {
+	const nimet = ["Sunnuntai", "Maanantai", "Tiistai", "Keskiviikko", "Torstai", "Perjantai", "Lauantai"];
+
+// Put your code here
+return {
+	lkm: function() {
+		return nimet.length;
+	},
+	nimi: function(index) {
+	return nimet[index %7];
+	},
+	numero: function(name) {
+		return nimet.indexOf(name);
+}
+};
+})();
+
+var num = 0;
+
+console.log("Viikossa on " + viikonPaiva.lkm() + " päivää.");
+console.log("Ohjelmoinnissa päivän " + viikonPaiva.nimi(num) + " indeksi on yleensä " + viikonPaiva.numero(viikonPaiva.nimi(num)));
