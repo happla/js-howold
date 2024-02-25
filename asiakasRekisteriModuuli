@@ -1,0 +1,54 @@
+var kauppa = {
+    asiakasrekisteri: (function() {
+        var lista = [];
+
+        function lisaa(etunimi, sukunimi) {
+            var id = luoId();
+            var highestId = Math.max(...lista.map(customer => customer.id), -1); // get highest id in list
+            if (id > highestId + 1) { // check if provided id is higher than expected next id
+                console.log("Liian korkea ID!");
+                return;
+            }
+            lista.push({ id: id, etunimi: etunimi, sukunimi: sukunimi });
+            console.log("Lisätty asiakas ID:llä " + id);
+            return id;
+        }
+
+        function luoId() {
+            return lista.length;
+        }
+
+        function asiakkaanTiedot(id) {
+            var asiakas = lista.find(asiakas => asiakas.id === id);
+            if (asiakas) {
+                return `${asiakas.id}: ${asiakas.sukunimi} ${asiakas.etunimi}`;
+            } else {
+                console.log("Liian korkea ID!");
+                return null;
+            }
+        }
+
+        function asiakasLista() {
+            console.log("Tulostetaan kaikki asiakkaat:");
+            lista.forEach(function(asiakas) {
+                console.log(asiakas.id + ": " + asiakas.etunimi + " " + asiakas.sukunimi);
+            });
+        }
+
+        return {
+            lisaa: lisaa,
+            asiakkaanTiedot: asiakkaanTiedot,
+            asiakasLista: asiakasLista
+        };
+    })()
+};
+
+// Test cases
+kauppa.asiakasrekisteri.asiakkaanTiedot(0); // works
+
+kauppa.asiakasrekisteri.lisaa("Matti", "Meikäläinen"); // works
+kauppa.asiakasrekisteri.lisaa("Hanna", "Huippukoodari");// works
+console.log(kauppa.asiakasrekisteri.asiakkaanTiedot(1)); // works
+kauppa.asiakasrekisteri.lisaa("Kerttu", "Leppä"); // works
+kauppa.asiakasrekisteri.lisaa("Simo", "Hillo"); // works
+kauppa.asiakasrekisteri.asiakasLista(); // works
